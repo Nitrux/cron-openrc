@@ -1,2 +1,9 @@
-# cron-openrc
-Service script to start cron service for OpenRC
+# Nitrux cron for OpenRC
+
+Service files to use cron with Nitrux.
+
+# Issues
+If you find problems with the contents of this repository please create an issue.
+
+©2025 Nitrux Latinoamericana S.C.
+
