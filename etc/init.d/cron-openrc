@@ -18,6 +18,7 @@ depend() {
 	need localmount
 	# It might run network-related jobs.
 	use net
+	provide cron
 }
 
 reload() {
