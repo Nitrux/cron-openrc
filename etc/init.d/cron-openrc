@@ -1,26 +1,12 @@
 #!/sbin/openrc-run
 
 description="Starts the cron periodic command scheduler"
-
-# Configuration is sourced automatically from the companion conf.d file.
-# /etc/conf.d/cron
 command="/usr/sbin/cron"
-command_args="-f ${CRON_OPTS}"
-pidfile="/run/crond.pid"
-
-# Using supervise-daemon is best for a critical service like cron.
+command_args="-f"
 supervisor=supervise-daemon
 
 depend() {
-	# cron is a core service but should start after the basics are up.
 	need localmount
-	# It might run network-related jobs.
 	use net
 	provide cron
-}
-
-reload() {
-	# cron automatically detects changes to crontabs, so a reload is not needed.
-	einfo "cron does not require reloading."
-	return 0
 }
